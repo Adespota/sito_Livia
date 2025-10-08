@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /cambioPassword
+
+# Host
+Host: https://seolo.net
+
+# Sitemaps
+Sitemap: https://seolo.net/sitemap.xml

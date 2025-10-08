@@ -1,0 +1,8 @@
+{
+  "root": true,
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    // segnala come ERRORE ogni apostrofo non escapato in JSX
+    "react/no-unescaped-entities": "error"
+  }
+}

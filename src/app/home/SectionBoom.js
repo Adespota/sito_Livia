@@ -95,9 +95,9 @@ export default function SectionBoom() {
 
                 {/* Centro (testi come richiesti) */}
                 <div className="flex flex-col max-w-lg justify-center text-center pointer-events-none">
-                    <h2 className="font-bold">Studio di Marketing</h2>
+                    <h4 className="font-bold">Studio di marketing</h4>
                     <p>
-                        Specialisti di <strong>beauty &amp; wellness</strong>: chirurgia/medicina estetica, estetica
+                        Specialisti in marketing nell'ambito della chirurgia e medicina, estetica
                         professionale e spa. Uniamo competenza di settore e operatività su contenuti, SEO e advertising
                         per far crescere il tuo brand.
                     </p>

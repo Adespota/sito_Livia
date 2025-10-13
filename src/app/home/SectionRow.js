@@ -52,7 +52,7 @@ export default function SectionRow({
                                 width={600}
                                 height={600}
                                 className="rounded-2xl"
-                                unoptimized
+                                unoptimized={true}
                             />
                             {(percentCard || textCard) && (
                                 <div className="absolute top-1/3 -left-[3.9rem] flex flex-col space-y-1.5 bg-white border border-gray-200 p-3 rounded-2xl">

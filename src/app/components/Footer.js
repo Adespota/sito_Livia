@@ -100,7 +100,7 @@ export default function Footer() {
 
 
     return (
-        <footer className="bg-[#626842] text-white py-6 px-6 m-4 rounded-2xl mt-56">
+        <footer className="bg-[#626842] text-white py-6 px-6 m-4 rounded-2xl pb-10">
             <div className="w-full rounded-2xl bg-white p-3 min-h-[280px] mb-20">
                 <div className="flex flex-col items-center justify-center space-y-2.5 max-w-2xl w-full mx-auto">
                     <h5 className="text-center">Sei pronto a lanciare la tua nuova strategia di marketing?</h5>

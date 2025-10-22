@@ -1,12 +1,8 @@
 'use client';
 
-import {ChevronRightIcon} from "@heroicons/react/24/solid";
-import HeroIcon from "../components/HeroIcons";
-import homeIcon from "@heroicons/react/24/outline/esm/HomeIcon";
-import phoneIcon from "@heroicons/react/24/outline/esm/PhoneIcon";
-import sparkles from "@heroicons/react/24/outline/esm/SparklesIcon";
-import questionMarkCircleIcon from "@heroicons/react/24/outline/esm/QuestionMarkCircleIcon";
+import { ChevronRight, Home, Phone, HelpCircle } from "lucide-react";
 import Link from "next/link";
+import {HeroIcons} from "@adespota/my-react-component";
 
 
 
@@ -15,29 +11,22 @@ const route404 = [
         name: 'Home',
         description: 'Ritorna alla home page',
         href: '/',
-        icon: homeIcon,
-        iconSecond: ChevronRightIcon
+        icon: Home,
+        iconSecond: ChevronRight
     },
     {
         name: 'Contatti',
         description: 'Trova tutte le informazioni necessarie per contattarmi',
         href: '/contatti',
-        icon: phoneIcon,
-        iconSecond: ChevronRightIcon
+        icon: Phone,
+        iconSecond: ChevronRight
     },
     {
         name: 'FAQ',
         description: 'Risposte alle domande frequenti',
         href: '/faq',
-        icon: questionMarkCircleIcon,
-        iconSecond: ChevronRightIcon
-    },
-    {
-        name: 'Prova gratis',
-        description: 'Prova gratis SeoLO',
-        href: '/dashboardAdmin/nuovoArticolo/?preview=true',
-        icon: sparkles,
-        iconSecond: ChevronRightIcon
+        icon: HelpCircle,
+        iconSecond: ChevronRight
     },
 ];
 
@@ -58,7 +47,9 @@ const list404 = (
                     <p className="mt-1 text-sm font-medium lg:w-2/3 w-full">{item.description} </p>
                 </div>
                 <div>
-                    <HeroIcon icon={item.iconSecond} />
+                    <HeroIcons
+                        icon={item.iconSecond}
+                    />
                 </div>
             </div>
         ))}

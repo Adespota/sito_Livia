@@ -7,6 +7,7 @@ module.exports = {
         './src/components/**/*.{js,ts,jsx,tsx,mdx}',
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
         './src/styles/constants.js',
+        './node_modules/@adespota/my-react-component/**/*.{js,ts,jsx,tsx}',
     ],
     theme: {
         container: {

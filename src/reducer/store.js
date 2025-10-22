@@ -1,32 +1,28 @@
-import{configureStore} from '@reduxjs/toolkit'
-import modalReducer from './features/ModalSlice' // Reducer per gestire le modali
-import registrazioneReducer from  './features/registrazioneSlice' // Reducer per gestire la registration utente
-import loginReducer from './features/loginSlice' // Reducer per gestire la login dell'utente
-import articoloReducer from './features/articoloSlice' // Reducer per l'articolo
-import articlesReducer from "./features/articleBlogSlice";
-import carrelloReducer from "./features/carrelloSlice"
-import sendReminderSliceReducer from "./features/sendReminderSlice";
-import snackBarSliceReducer from "./features/snackBarSlice";
+
+import { configureStore } from '@reduxjs/toolkit';
+import modalReducer from './features/ModalSlice';
+import loginReducer from './features/loginSlice';
 import chatGeminiReducer from "./features/chatGeminiSlice";
 import auditSlice from "./features/auditSlice";
-import user from "./features/user";
+import userSlice from "./features/user";
+import {
+    articoloSlice,
+    articlesBlogSlice,
+    snackbarSlice,
+} from "@adespota/my-react-component";
 
 
 
 export const store = configureStore({
     reducer: {
-        user: user,
-        modal: modalReducer,
-        registrazione: registrazioneReducer,
-        login: loginReducer,
-        articolo: articoloReducer,
-        articles: articlesReducer,
-        carrello: carrelloReducer,
-        sendReminder: sendReminderSliceReducer,
-        snackBarSlice: snackBarSliceReducer,
-        chatGemini: chatGeminiReducer,
+        user: userSlice,
         auditSlice: auditSlice,
-        // Altri reducer, se presenti...
+        modal: modalReducer,
+        login: loginReducer,
+        chatGemini: chatGeminiReducer,
+        articolo: articoloSlice.reducer,
+        articles: articlesBlogSlice.reducer,
+        snackBarSlice: snackbarSlice.reducer,
     },
 });
 

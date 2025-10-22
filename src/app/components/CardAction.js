@@ -1,7 +1,7 @@
 'use client';
 
-import HeroIcon from "@/app/components/HeroIcons";
 import Link from "next/link";
+import {HeroIcons} from "@adespota/my-react-component";
 
 
 
@@ -14,7 +14,7 @@ export default function CardAction({ title, href, text, textAction, className, i
             <div className={`bg-[#F9FAFB] rounded-xl px-6 py-6 space-y-1 boxShadow_custom hover_boxShadow_custom ${widthClass} ${heightClass} ${className}`}>
                 {primaryIcon && (
                     <div className='flex w-full justify-start'>
-                        <HeroIcon
+                        <HeroIcons
                             size={{ width: 'w-7', height: 'h-7' }}
                             icon={primaryIcon}
                             className="text-myColor-default mb-2"

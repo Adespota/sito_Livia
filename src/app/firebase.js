@@ -1,20 +1,17 @@
-
-import { initializeApp, getApps } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import { getStorage } from "firebase/storage";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    GoogleAuthProvider,
-} from "firebase/auth";
-import { getFirestore, serverTimestamp, Timestamp } from "firebase/firestore";
+    getFirestore,
+    serverTimestamp,
+    initializeFirestore,
+    persistentLocalCache,
+    CACHE_SIZE_UNLIMITED
+} from "firebase/firestore";
 import { getFunctions, httpsCallable } from "firebase/functions";
-import { initializeFirestore, persistentLocalCache, CACHE_SIZE_UNLIMITED } from "firebase/firestore";
 
 
-
-// Configurazione dell'app Firebase tramite variabili d'ambiente
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -25,53 +22,42 @@ const firebaseConfig = {
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
+const app = !getApps().length
+    ? initializeApp(firebaseConfig)
+    : getApp();
 
-// Inizializzazione dell'app Firebase
-let app;
-if (!getApps().length) {
-    app = initializeApp(firebaseConfig); // Inizializza Firebase se non è già inizializzato
-} else {
-    app = getApps()[0]; // Se Firebase è già inizializzato, usa l'istanza esistente
-}
-
-
-
-// Ottenere l'istanza di Firebase Functions ed esportarla per l'uso
-const functions = getFunctions(app);
-export { functions, httpsCallable, getFunctions };
-
-// Ottenere l'istanza di Firebase Authentication ed esportarla per l'uso
+// Auth
 const auth = getAuth(app);
-export { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider };
+const googleAuthProvider = new GoogleAuthProvider();
 
-// Ottenere l'istanza di Realtime Database ed esportarla per l'uso
+// Realtime Database
 const database = getDatabase(app);
-export { database }; // Esportare Realtime Database
 
+// Storage
+const storage = getStorage(app);
 
-// Inizializza Firestore con una configurazione che include la persistenza e la dimensione della cache
+// Functions
+const functions = getFunctions(app); // <--- Istanza creata
+
+// Firestore: con configurazione di cache
 const firestore = initializeFirestore(app, {
     localCache: persistentLocalCache({
-        synchronizeTabs: true, // Consente la persistenza offline su più schede del browser
-        cacheSizeBytes: CACHE_SIZE_UNLIMITED // Configura la cache senza limiti di dimensione
+        synchronizeTabs: true,
+        cacheSizeBytes: CACHE_SIZE_UNLIMITED
     })
 });
-export { firestore, serverTimestamp }; // Esportare Firestore e serverTimestamp
 
-// Ottenere un riferimento all'istanza di Firebase Storage (per immagini e file)
-const storage = getStorage(app);
-export { storage }; // Esportare Firebase Storage
+// 5. Esportazioni: Aggiunta di 'functions' alla lista delle esportazioni nominate
+export { serverTimestamp, httpsCallable, googleAuthProvider, functions }; // ⭐ CORREZIONE QUI
 
-
-// Esportazione dell'intero oggetto Firebase per un facile utilizzo
+// Esportazione del singolo oggetto contenente tutte le istanze per un accesso pulito.
 const firebase = {
     app,
-    functions,
     auth,
     database,
     firestore,
     storage,
-    httpsCallable,
-    serverTimestamp,
+    functions,
 };
-export { firebase };
+
+export default firebase;

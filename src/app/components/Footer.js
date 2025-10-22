@@ -2,8 +2,8 @@
 
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {selectCategories} from "@/reducer/features/articoloSlice";
-import {setSelectedCategory} from "@/reducer/features/articleBlogSlice";
+import {selectCategories} from "@adespota/my-react-component";
+
 import {useRouter} from "next/navigation";
 import Link from "next/link";
 import {Button} from "@adespota/my-react-component";
@@ -92,11 +92,14 @@ export default function Footer() {
     const router = useRouter();
     const dispatch = useDispatch();
 
-    const handleCategoryClick = (category) => {
+    {/*
+       const handleCategoryClick = (category) => {
         dispatch(setSelectedCategory(category)); // Seleziona la categoria
         console.log(" =>", category)
         router.push('/blog');
     };
+
+    */}
 
 
     return (
@@ -124,7 +127,7 @@ export default function Footer() {
                                 categories.map((item, index) => (
                                     <li
                                         key={index}
-                                        onClick={() => handleCategoryClick(item.categoria)}
+                                        //onClick={() => handleCategoryClick(item.categoria)}
                                         className="block text-[0.83rem] font-medium leading-5 text-white cursor-pointer"
                                     >
                                         {item.categoria}

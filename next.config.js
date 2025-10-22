@@ -1,4 +1,5 @@
 const nextConfig = {
+    transpilePackages: ['@adespota/my-react-component'],
     //distDir: 'out', // Specifies the output folder as 'out'
     images: {
         remotePatterns: [

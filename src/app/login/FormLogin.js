@@ -2,9 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Input from '../components/Input';
-
-import HeroIcon from "../components/HeroIcons";
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline/index";
+import { Eye, EyeOff } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import {
     selectEmail,
@@ -23,11 +21,10 @@ import {
 } from "/src/reducer/features/ModalSlice";
 import { login } from "./functionLogin";
 import { useRouter } from "next/navigation";
-import { useCrud } from "/src/services/crudServices";
 import ModalFailureLogin from "./ModalFailureLogin";
 import {useRecaptcha} from "@/hooks/useRecaptcha";
 import Link from "next/link";
-import {Button} from "@adespota/my-react-component";
+import {Button, HeroIcons} from "@adespota/my-react-component";
 import {backgroundButtonStyle} from "@/styles/constants";
 
 
@@ -56,7 +53,7 @@ const InputField = ({ label, withIcon, value, onChange, error, passwordVisible, 
             <div className="absolute inset-y-0 right-0 items-center pr-2 pt-3 cursor-pointer">
                 {withIcon ? (
                     <div onClick={togglePasswordVisibility}>
-                        {passwordVisible ? <HeroIcon icon={EyeIcon} /> : <HeroIcon icon={EyeSlashIcon} />}
+                        {passwordVisible ? <HeroIcons icon={Eye} /> : <HeroIcons icon={EyeOff} />}
                     </div>
                 ) : null}
             </div>
@@ -69,7 +66,7 @@ const InputField = ({ label, withIcon, value, onChange, error, passwordVisible, 
         {label === 'Password' && (
             <div className="space-y-4 pt-4 font-semibold flex flex-col text-right cursor-pointer">
                 <Link
-                    href="/recuperaPassword"
+                    href="/"
                     className="font-semibold text-lg">
                     Hai dimenticato la password?
                 </Link>
@@ -80,10 +77,9 @@ const InputField = ({ label, withIcon, value, onChange, error, passwordVisible, 
 
 
 
-export default function FormLogin({origin}) {
+export default function FormLogin() {
     const dispatch = useDispatch();
     const router = useRouter();
-    const { readDocument } = useCrud();
     const selectedEmail = useSelector(selectEmail);
     const emailError = useSelector(selectEmailError);
     const selectedPassword = useSelector(selectPassword);

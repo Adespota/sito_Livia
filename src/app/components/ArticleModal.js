@@ -7,7 +7,7 @@ import {downloadArticle} from "@/utils/downloadArticle";
 import { showSnackbar } from "@/reducer/features/snackBarSlice";
 import {addParagraph, deleteAllParagraphs, resetAll, triggerResetKey} from "@/reducer/features/articoloSlice";
 import DialogEndFreeVersion from "@/app/components/DialogEndFreeVersion";
-import {backgroundButtonStyle, textButtonStyle} from "@/styles/constants";
+import {backgroundButtonStyle} from "@/styles/constants";
 import {strongToHTML} from "@/utils/strongToHTML";
 import {splitIntoBlocks} from "@/utils/splitIntoBlocks";
 import {convertDashListsToHtml} from "@/utils/convertDashListsToHtml";

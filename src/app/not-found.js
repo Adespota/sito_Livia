@@ -1,8 +1,8 @@
 import React from 'react';
 import Page404 from './404/page';
 
-const NotFoundPage = () => {
+export default function NotFoundPage  ()  {
     return <Page404 />;
 };
 
-export default NotFoundPage;
+

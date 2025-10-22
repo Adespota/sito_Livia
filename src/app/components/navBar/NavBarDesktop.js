@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import HeroIcon from "@/app/components/HeroIcons";
-import arrowSmallRightIcon from "@heroicons/react/20/solid/esm/ArrowSmallRightIcon";
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import { ArrowRight } from "lucide-react";
+import {HeroIcons} from "@adespota/my-react-component";
 
 const menuLinks = [
     { name: 'Home', href: '/' },
@@ -63,8 +62,8 @@ export default function NavBarDesktop() {
                     aria-hidden="true"
                     className="inline-block align-middle transition-transform duration-200 ease-in-out group-hover:translate-x-1"
                 >
-                    <HeroIcon
-                        icon={arrowSmallRightIcon}
+                    <HeroIcons
+                        icon={ArrowRight}
                         className="text-myColor-colorTextOnDefaultColor"
                     />
                 </span>

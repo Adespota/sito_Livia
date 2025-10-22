@@ -1,15 +1,17 @@
+import React from "react";
+
 import { Inter } from "next/font/google";
 import "/src/styles/globals.css";
-import { ReduxProvider } from "@/reducer/provider";
-import { AuthProvider } from '@/app/authContext';
-import CustomSnackbar from "@/app/components/CustomSnackBar";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import {Iubenda} from "@/app/componentsClient/componentsClient";
+import NavigationWrapper from "@/app/components/navBar/NavigationWrapper";
+import GlobalClientProviders from "@/app/GlobalClientProviders";
 
 
 
 
 const inter = Inter({ subsets: ["latin"] });
+
 
 
 
@@ -19,7 +21,7 @@ export const metadata = {
             {
                 rel: 'icon',
                 type: 'image/svg+xml',
-                url: '',
+                url: '/favicon.svg',
             },
         ],
     },
@@ -35,14 +37,10 @@ export default function RootLayout({ children }) {
             <Iubenda />
         </head>
         <body className={inter.className}>
-        <AuthProvider>
-            <ReduxProvider>
-                {children}
-                <CustomSnackbar />
-                {/* <Analytics /> */}
-                <SpeedInsights />
-            </ReduxProvider>
-        </AuthProvider>
+        <GlobalClientProviders>
+            <NavigationWrapper />
+            {children}
+        </GlobalClientProviders>
         </body>
         </html>
     );

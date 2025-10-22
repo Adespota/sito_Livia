@@ -1,25 +1,26 @@
+'use client';
+
 import React from 'react';
-import { NavBar, FormContact } from '/src/app/componentsClient/componentsClient';
-import HeroIcon from "@/app/components/HeroIcons";
+import { FormContact } from '/src/app/componentsClient/componentsClient';
 import { EmailRounded } from "@mui/icons-material";
-import Footer from "@/app/components/Footer";
-import PhoneRoundedIcon from '@mui/icons-material/PhoneRounded';
+import {HeroIcons} from "@adespota/my-react-component";
 
 
+/*
 export const metadata = {
-    title: 'Contatti SeoLO - Mettiti in contatto con noi',
+    title: '',
     description:
-        'Hai domande o necessiti di assistenza? Contattaci per maggiori informazioni sul nostro software SEO e scopri come possiamo aiutarti a ottimizzare il tuo sito web.',
-    author: 'Team SeoLO',
+        '',
+    author: '',
     keywords:
-        'contatti, assistenza, supporto, informazioni, software SEO, ottimizzazione sito, comunicazione, clienti SeoLO',
+        '',
     openGraph: {
-        title: 'Contatti SeoLO - Siamo qui per te',
+        title: '',
         description:
-            'Mettiti in contatto con il nostro team per ricevere supporto, informazioni e risolvere ogni tua esigenza riguardo al nostro software SEO.',
-        canonical: 'https://www.seolo.net/contatti',
+            '',
+        canonical: '',
         type: 'website',
-        site_name: 'SEOLO',
+        site_name: '',
         images: [
             {
                 url: '',
@@ -29,6 +30,8 @@ export const metadata = {
     },
     canonical: 'https://www.seolo.net/contatti',
 }
+
+ */
 
 
 
@@ -41,7 +44,7 @@ function Card({ icon: Icon, title, text, iconSize = { width: "w-7", height: "h-7
             <div className="flex sm:flex-row flex-col items-center sm:items-start">
                 {Icon && (
                     <div className="basis-1/6 sm:mb-0 mb-2">
-                        <HeroIcon
+                        <HeroIcons
                             icon={Icon}
                             size={iconSize}
                             className={iconClass}
@@ -60,7 +63,6 @@ function Card({ icon: Icon, title, text, iconSize = { width: "w-7", height: "h-7
 export default function PageContact() {
     return (
         <>
-            <NavBar />
             <div className="grid sm:grid-cols-12 grid-cols-1 gap-x-10 mt-32 mb-20 sm:space-y-0 space-y-4 px-4">
                 {/* Sezione delle card */}
                 <div className="sm:col-start-3 sm:col-span-4">
@@ -76,7 +78,6 @@ export default function PageContact() {
                     <FormContact />
                 </div>
             </div>
-            <Footer />
         </>
     );
 }

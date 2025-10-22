@@ -1,15 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import HeroIcon from "../HeroIcons";
-import {
-    ChevronDownIcon,
-    ChevronUpIcon,
-    ChevronRightIcon,
-} from "@heroicons/react/20/solid";
+import { Menu, X, ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
 import CollapsibleDescription from "@/app/components/navBar/CollapsibleDescription";
 import Link from "next/link";
+import {HeroIcons} from "@adespota/my-react-component";
 
 
 const mobileLinks = [
@@ -73,9 +68,9 @@ export default function NavBarMobile({ className }) {
                 >
                     <span className="sr-only">Open main menu</span>
                     {mobileMenuOpen ? (
-                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                        <X className="h-6 w-6" aria-hidden="true" />
                     ) : (
-                        <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                        <Menu className="h-6 w-6" aria-hidden="true" />
                     )}
                 </button>
             </header>
@@ -94,8 +89,8 @@ export default function NavBarMobile({ className }) {
                                         >
                                             <div className="w-full inline-flex justify-between items-center">
                                                 <p className="font-semibold">{link.name}</p>
-                                                <HeroIcon
-                                                    icon={visibleSublinks === link.name ? ChevronUpIcon : ChevronDownIcon}
+                                                <HeroIcons
+                                                    icon={visibleSublinks === link.name ? ChevronUp : ChevronDown}
                                                     aria-hidden="true"
                                                 />
                                             </div>
@@ -112,7 +107,7 @@ export default function NavBarMobile({ className }) {
                                                         <div className="flex flex-row items-center space-x-3">
                                                             {sublink.icon && ( // Mostra l'icona solo se presente
                                                                 <div className="flex-none">
-                                                                    <HeroIcon icon={sublink.icon} aria-hidden="true" />
+                                                                    <HeroIcons icon={sublink.icon} aria-hidden="true" />
                                                                 </div>
                                                             )}
                                                             <CollapsibleDescription name={sublink.name} description={sublink.description} />
@@ -130,7 +125,10 @@ export default function NavBarMobile({ className }) {
                                     >
                                         <div className="flex flex-row items-center justify-between">
                                             <p className="font-semibold text-left text-myColor-colorTextNavBar text-[1rem]">{link.name}</p>
-                                            <HeroIcon icon={ChevronRightIcon} className="h-6 w-6" aria-hidden="true" />
+                                            <HeroIcons
+                                                icon={ChevronRight}
+                                                aria-hidden="true"
+                                            />
                                         </div>
                                     </Link>
                                 )}

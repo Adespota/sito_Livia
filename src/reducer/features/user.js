@@ -2,8 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 // Redux utile per prendere i dati dell'utente loggato
-
-
 const initialState = {
     uid: null,
     email: null,
@@ -41,7 +39,7 @@ export const userSlice = createSlice({
         // Imposta lo stato di errore
         setError: (state, action) => {
             state.error = action.payload;
-            state.isLoading = false; // Se c'è un errore, non sta più caricando
+            state.isLoading = false;
         },
     },
 });

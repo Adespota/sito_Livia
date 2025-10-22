@@ -1,9 +1,9 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-import { Button } from "@adespota/my-react-component";
-import { backgroundButtonStyle, textButtonStyle } from "@/styles/constants";
+import {Button, HeroIcons} from "@adespota/my-react-component";
+import { backgroundButtonStyle} from "@/styles/constants";
 import BoldIcon from '@mui/icons-material/FormatBold';
 import LinkIcon from '@mui/icons-material/AddLinkRounded';
-import { HeroIcon } from "@/app/componentsClient/componentsClient";
+
 
 
 export default function SimpleToolbarContentEditable({
@@ -201,21 +201,21 @@ export default function SimpleToolbarContentEditable({
     return (
         <div className="container">
             <div className="flex flex-row space-x-2 mt-3 p-2 bg-gray-100 border border-gray-200 rounded-2xl mb-2">
-                <HeroIcon
+                <HeroIcons
                     icon={BoldIcon}
                     onClick={handleBold}
                     tooltipText="Grassetto (Strong)"
                     size={{ width: 'w-4', height: 'h-4' }}
                     className="p-1 cursor-pointer hover:bg-gray-200 rounded-md"
                 />
-                <HeroIcon
+                <HeroIcons
                     icon={LinkIcon}
                     onClick={handleAddLink}
                     tooltipText="Aggiungi link"
                     size={{ width: 'w-4', height: 'h-4' }}
                     className="p-1 cursor-pointer hover:bg-gray-200 rounded-md"
                 />
-                <HeroIcon
+                <HeroIcons
                     icon={LinkIcon}
                     onClick={handleUnorderedList}
                     tooltipText="Elenco puntato"
@@ -248,14 +248,12 @@ export default function SimpleToolbarContentEditable({
                     <div className="flex space-x-4 mt-3">
                         <Button
                             backgroundColor={backgroundButtonStyle}
-                            textStyle={textButtonStyle}
                             buttonTextDesktop="Aggiungi Link"
                             onClick={handleLinkSubmit}
                         />
                         <Button
                             buttonTextDesktop="Annulla"
                             backgroundColor={backgroundButtonStyle}
-                            textStyle={textButtonStyle}
                             onClick={() => {
                                 setShowLinkPopup(false);
                                 setLinkURL('');

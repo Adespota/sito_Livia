@@ -1,9 +1,6 @@
 'use client';
 
 import React from 'react';
-import {HeroIcon} from "@/app/componentsClient/componentsClient";
-import {ArrowRightIcon} from "@heroicons/react/20/solid";
-import NavBar from "@/app/components/navBar/NavBar";
 import {Button} from "@adespota/my-react-component";
 import {backgroundButtonStyle,} from "@/styles/constants";
 import Image from 'next/image';
@@ -12,8 +9,6 @@ import Image from 'next/image';
 export default function HeadHome() {
     return (
         <>
-            <NavBar />
-
             {/* Contenitore principale centrato e con larghezza limitata */}
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col justify-center py-10">

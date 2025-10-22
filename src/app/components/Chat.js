@@ -14,7 +14,7 @@ import {
 } from 'firebase/firestore';
 import { auth, firestore } from '@/app/firebase';
 import {Button} from "@adespota/my-react-component";
-import {backgroundButtonStyle, textButtonStyle} from "@/styles/constants";
+import {backgroundButtonStyle,} from "@/styles/constants";
 import {usePathname} from "next/navigation";
 
 // Componente per il singolo messaggio

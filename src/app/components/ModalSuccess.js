@@ -38,7 +38,6 @@ export default function ModalSuccess({ image, primaryText, secondaryText, textPr
                             <Button
                                 buttonTextDesktop={textPrimaryButtonModal}
                                 backgroundColor="bg-white"
-                                textStyle={textButtonStyle}
                                 colorCircularProgress="#4a58a7"
                                 onClick={onClickPrimary}
                                 linkTo={linkPrimary}
@@ -47,7 +46,6 @@ export default function ModalSuccess({ image, primaryText, secondaryText, textPr
                             <Button
                                 buttonTextDesktop={textSecondaryButtonModal}
                                 backgroundColor={backgroundButtonStyle}
-                                textStyle={textButtonStyle}
                                 colorCircularProgress="#4a58a7"
                                 onClick={onClickSecondary}
                                 linkTo={linkSecondary}

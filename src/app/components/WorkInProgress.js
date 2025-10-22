@@ -1,16 +1,14 @@
 'use client'
+
 import Image from "next/image";
 import React from "react";
-import NavBar from "@/app/components/navBar/NavBar";
-import Button from "@/app/components/Button";
-import Footer from "@/app/components/Footer";
+import {Button} from "@adespota/my-react-component";
 
 
 
 export default function WorkInProgress() {
     return(
         <>
-            <NavBar />
             <div className="mt-16">
                 <div className="w-full flex-col justify-center items-center flex">
                     <Image
@@ -30,7 +28,6 @@ export default function WorkInProgress() {
                     </div>
                 </div>
             </div>
-            <Footer/>
         </>
     );
 }

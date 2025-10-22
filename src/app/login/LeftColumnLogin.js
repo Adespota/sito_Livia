@@ -1,9 +1,9 @@
 'use client';
 
 import React from "react";
-import HeroIcon from "../components/HeroIcons";
-import arrowSmallLeftIcon from "@heroicons/react/20/solid/esm/ArrowSmallLeftIcon";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import {HeroIcons} from "@adespota/my-react-component";
 
 
 
@@ -21,11 +21,13 @@ export default function LeftColumnLogin() {
 
                     <div className="flex items-center">
                         <span aria-hidden="true" className="inline-block align-middle">
-                            <HeroIcon
-                                icon={arrowSmallLeftIcon}
+                            <HeroIcons
+                                icon={ArrowLeft}
                                 className="text-myColor-colorTextOnDefaultColor" />
                         </span>
-                        <Link href="/" className="block text-lg font-semibold leading-6 text-myColor-colorTextOnDefaultColor">
+                        <Link
+                            href="/"
+                            className="block text-lg font-semibold leading-6 text-myColor-colorTextOnDefaultColor">
                             Home
                         </Link>
                     </div>

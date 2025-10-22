@@ -1,11 +1,9 @@
 'use client';
 
 import { motion } from "framer-motion";
-
 import useLockScroll from "/src/hooks/useLockScroll";
 import Image from "next/image";
 import {Button} from "@adespota/my-react-component";
-import {backgroundButtonStyle} from "@/styles/constants";
 
 
 export default function ModalFailure({
@@ -49,7 +47,6 @@ export default function ModalFailure({
                                 <Button
                                     buttonTextDesktop={textPrimaryButtonModal}
                                     backgroundColor="bg-white"
-                                    textStyle={textButtonStyle}
                                     onClick={onClickPrimary}
                                     linkTo={linkPrimary}
                                     className={`bg-white border-2 border-myColor-borderColorCard ${stylePrimaryButton}`}
@@ -57,7 +54,6 @@ export default function ModalFailure({
                                 <Button
                                     buttonTextDesktop={textSecondaryButtonModal}
                                     backgroundColor="bg-red-500"
-                                    textStyle={textButtonStyle}
                                     onClick={onClickSecondary}
                                     linkTo={linkSecondary}
                                 />

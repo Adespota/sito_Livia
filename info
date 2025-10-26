@@ -1,0 +1,9 @@
+- Codice per eliminare node_modules e package-lock.json e installare nuovamente tutte le dipendenze
+  Remove-Item -Recurse -Force node_modules, package-lock.json
+  npm install
+
+
+- Codice per eliminare e reinstallare la libreria_redux '@tuoorg/domain-lib'
+
+  npm uninstall @tuoorg/domain-lib  // Rimuovi la libreria dal progetto e dal package-lock.json
+  npm install @tuoorg/domain-lib@github:Adespota/libreria_redux#main // Reinstalla la libreria. Questo comando leggerà la versione aggiornata dal tuo package.json, scaricando la versione più recente da GitHub.

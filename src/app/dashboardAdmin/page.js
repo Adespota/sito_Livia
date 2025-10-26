@@ -6,7 +6,7 @@ import { useSelector} from "react-redux";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Grid';
 import {useAuth} from "@/app/authContext";
-import {selectArticles} from "@adespota/my-react-component";
+
 
 
 
@@ -14,16 +14,16 @@ import {selectArticles} from "@adespota/my-react-component";
 
 export default function Page() {
     const [loading, setLoading] = useState(true);
-    const articles = useSelector(selectArticles);
-    const categoryCount = articles.reduce((acc, article) => {
-        if (article.categoria) {
-            acc[article.categoria] = (acc[article.categoria] || 0) + 1;
-        }
-        return acc;
-    }, {});
+
+    //const categoryCount = articles.reduce((acc, article) => {
+        //if (article.categoria) {
+           // acc[article.categoria] = (acc[article.categoria] || 0) + 1;
+        //}
+        //return acc;
+    //}, {});
     // Estrarre i nomi delle categorie e il numero di articoli
-    const categoryLabels = Object.keys(categoryCount); // Array con i nomi delle categorie
-    const categoryData = Object.values(categoryCount); // Array con il numero di articoli per categoria
+    //const categoryLabels = Object.keys(categoryCount); // Array con i nomi delle categorie
+    //const categoryData = Object.values(categoryCount); // Array con il numero di articoli per categoria
 
 
 

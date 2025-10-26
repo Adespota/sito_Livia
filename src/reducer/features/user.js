@@ -33,9 +33,9 @@ export const userSlice = createSlice({
             Object.assign(state, { ...initialState, isLoading: false });
         },
         // Imposta lo stato di caricamento
-        setLoading: (state, action) => {
-            state.isLoading = action.payload;
-        },
+        //setLoading: (state, action) => {
+            //state.isLoading = action.payload;
+        //},
         // Imposta lo stato di errore
         setError: (state, action) => {
             state.error = action.payload;
@@ -48,7 +48,7 @@ export const userSlice = createSlice({
 export const {
     setUser,
     clearUser,
-    setLoading,
+    //setLoading,
     setError,
 } = userSlice.actions;
 

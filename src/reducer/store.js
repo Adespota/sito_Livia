@@ -1,28 +1,24 @@
-
 import { configureStore } from '@reduxjs/toolkit';
 import modalReducer from './features/ModalSlice';
 import loginReducer from './features/loginSlice';
-import chatGeminiReducer from "./features/chatGeminiSlice";
-import auditSlice from "./features/auditSlice";
-import userSlice from "./features/user";
-import {
-    articoloSlice,
-    articlesBlogSlice,
-    snackbarSlice,
-} from "@adespota/my-react-component";
-
-
+import chatGeminiReducer from './features/chatGeminiSlice';
+import auditReducer from './features/auditSlice';
+import userReducer from './features/user';
+import { articoloReducer, articlesBlogReducer, snackbarReducer } from '@tuoorg/domain-lib';
 
 export const store = configureStore({
     reducer: {
-        user: userSlice,
-        auditSlice: auditSlice,
+       // Arrivano dalla libreria 'libreria_redux'
+        articolo: articoloReducer,
+        articles: articlesBlogReducer,
+        snackbar: snackbarReducer,
+
+        // tuoi
+        user: userReducer,
+        audit: auditReducer,
         modal: modalReducer,
         login: loginReducer,
         chatGemini: chatGeminiReducer,
-        articolo: articoloSlice.reducer,
-        articles: articlesBlogSlice.reducer,
-        snackBarSlice: snackbarSlice.reducer,
     },
 });
 

@@ -1,9 +1,8 @@
+
 'use client';
 
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {selectCategories} from "@adespota/my-react-component";
-
 import {useRouter} from "next/navigation";
 import Link from "next/link";
 import {Button} from "@adespota/my-react-component";
@@ -88,7 +87,7 @@ const sectionClasses = [
 
 
 export default function Footer() {
-    const categories = useSelector(selectCategories) || [];
+
     const router = useRouter();
     const dispatch = useDispatch();
 
@@ -123,7 +122,8 @@ export default function Footer() {
                     <div key={index} className={`${sectionClasses[index]}`}>
                         <h6 className="text-white text-[1rem] font-semibold leading-5 lg:mb-5 mb-9">{section.title}</h6>
                         <ul className="list-none space-y-3 pl-0 ml-0">
-                            {section.title === 'Blog' ?
+                            {/*
+                             {section.title === 'Blog' ?
                                 categories.map((item, index) => (
                                     <li
                                         key={index}
@@ -133,6 +133,8 @@ export default function Footer() {
                                         {item.categoria}
                                     </li>
                                 )) : null}
+                            */}
+
 
                             {section.links?.map((link, linkIndex) => {
                                 if (link.url) {

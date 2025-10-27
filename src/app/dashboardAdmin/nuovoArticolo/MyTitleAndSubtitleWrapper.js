@@ -18,10 +18,7 @@ export default function MyTitleAndSubtitleWrapper() {
     // Dati da passare TitleAndSubtitle
     const titolo = useSelector(s => s?.articolo?.titolo) || "" ;
     const sottotitolo = useSelector(s => s?.articolo?.sottotitolo) || "" ;
-    const azione = domainLib.articolo.setInputPath;
-    //console.log("setSelectedCategory in domainLib →", domainLib.setSelectedCategory);
-
-
+    const azione = domainLib.articolo.setInput;
 
 
 
@@ -30,7 +27,7 @@ export default function MyTitleAndSubtitleWrapper() {
             <TitleAndSubtitle
                 titolo={titolo}
                 sottotitolo={sottotitolo}
-                onSetInput={({ field, value }) => dispatch(azione({ path: field, value }))}
+                onSetInput={(value) => dispatch(azione(value))}
             />
         </>
 

@@ -19,7 +19,7 @@ export default function MyCategoryWrapper() {
 
     // Dati da passare a Categoria
     const allCategories = useSelector(s => s?.articles?.category) || [];
-    const selectedCategory = useSelector(s => s?.articolo?.categoria) || "NON DISPONIBILE";
+    const selectedCategory = useSelector(s => s?.articolo?.categoria) || " ";
     const azione = domainLib.setSelectedCategory;
     const azioneSnackbar = domainLib.snackbar.showSnackbar;
     //console.log("setSelectedCategory in domainLib →", domainLib.setSelectedCategory);

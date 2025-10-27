@@ -7,6 +7,8 @@ import MyAddNewCategoryWrapper from "@/app/dashboardAdmin/nuovoArticolo/MyAddNew
 import MyIndiceWrapper from "@/app/dashboardAdmin/nuovoArticolo/MyIndiceWrapper";
 import MySintesiArticoloWrapper from "@/app/dashboardAdmin/nuovoArticolo/MySintesiArticoloWrapper";
 import MyPuntiChiaveWrapper from "@/app/dashboardAdmin/nuovoArticolo/MyPuntiChiaveWrapper";
+import EditorParagraphWrapper from "@/app/dashboardAdmin/nuovoArticolo/AllParagraphs";
+import AllParagraphs from "@/app/dashboardAdmin/nuovoArticolo/AllParagraphs";
 
 
 
@@ -24,6 +26,9 @@ export default function Page() {
             <MyIndiceWrapper />
             <MySintesiArticoloWrapper />
             <MyPuntiChiaveWrapper />
+            <AllParagraphs />
         </div>
     );
 }
+
+

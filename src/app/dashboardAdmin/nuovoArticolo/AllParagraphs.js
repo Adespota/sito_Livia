@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import * as domainLib from "@tuoorg/domain-lib";
 import { NewParagraph } from "@adespota/my-react-component";
 
+
+
 export default function AllParagraphs() {
     const dispatch = useDispatch();
     const paragrafi = useSelector((s) => s.articolo.paragrafi || []);
@@ -20,12 +22,14 @@ export default function AllParagraphs() {
         }));
     }, [dispatch, azione]);
 
+
     const handleContentChange = useCallback((index, value) => {
         dispatch(azione({
             path: `paragrafi[${index}].contenuto`,
             value
         }));
     }, [dispatch, azione]);
+
 
     const handleWordCount = useCallback((index, count) => {
         dispatch(domainLib.articolo.setContaParole({ index, wordCount: count }));
@@ -49,12 +53,15 @@ export default function AllParagraphs() {
         <div className="space-y-5">
             {paragrafi.map((paragrafo, index) => (
                 <NewParagraph
-                    key={`${paragrafo.id}-${resetKey}`}
+                    //key={`${paragrafo.id}-${resetKey}`}
+                    key={paragrafo.id}
+                    paragrafoId={paragrafo.id}
                     index={index}
                     titleValue={paragrafo.titoloParagrafo}
                     contentValue={paragrafo.contenuto}
                     onTitleChange={(i, value) => handleTitleChange(i, value)}
                     onContentChange={(i, value) => handleContentChange(i, value)}
+                    sendToRedux={(i, html) => handleContentChange(i, html)}
                     onWordCount={(i, count) => handleWordCount(i, count)}
                     onValidate={handleValidate}
                     onAdd={handleAdd}
@@ -64,3 +71,5 @@ export default function AllParagraphs() {
         </div>
     );
 }
+
+

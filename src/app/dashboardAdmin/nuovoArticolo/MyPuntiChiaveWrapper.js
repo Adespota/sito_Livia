@@ -9,12 +9,8 @@ import { PuntiChiave } from "@adespota/my-react-component";
 
 export default function MyPuntiChiaveWrapper() {
     const dispatch = useDispatch();
-
     const puntiChiave = useSelector((s) => s?.articolo?.puntiChiave || []);
-    const validazione = useSelector(
-        (s) => s?.articolo?.validazione?.puntiChiave ?? true
-    );
-
+    const validazione = useSelector((s) => s?.articolo?.validazione?.puntiChiave ?? true);
     const setInput = domainLib.articolo.setInput;
 
     return (
